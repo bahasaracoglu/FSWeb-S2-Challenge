@@ -194,8 +194,6 @@ function emojileriDonustur(mesaj, emojilerNesnesi) {
 
 	for (const emotIkonları in emojilerNesnesi) {
 		mesaj = (mesaj.replaceAll(emotIkonları, emojilerNesnesi[emotIkonları]))
-	}
-	for (const emotIkonları in emojilerNesnesi) {
 		mesaj = (mesaj.replaceAll(emotIkonları.toUpperCase(), emojilerNesnesi[emotIkonları]))
 	}
 	return mesaj
