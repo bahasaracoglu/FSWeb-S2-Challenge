@@ -86,7 +86,7 @@ console.log(cumleKur("Hello", " World!"));
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 var bircumle;
 
-bircumle = cumleKur("Ben"," iyi"," bir"," yazılımcı"," olacağım!")
+bircumle = cumleKur("Ben", " iyi", " bir", " yazılımcı", " olacağım!")
 
 console.log(cumleKur(bircumle));
 
@@ -108,11 +108,16 @@ console.log(cumleKur(bircumle));
 	*/
 
 
-function cumlelereDonustur(/* kodlar buraya */) {
-	/* kodlar buraya */
+function cumlelereDonustur(alinacakDizi, kelimeAyraci, ayrac = ',') {
+	const ucUcaEklenenKelimeler = alinacakDizi.map(cumle => cumle.join(ayrac));
+	const cumlelerDizisi = alinacakDizi.map(cumle => cumle.join(kelimeAyraci));
+
+return cumlelerDizisi
+
+	
 }
 
-
+console.log(cumlelereDonustur(cumleler, " "));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
