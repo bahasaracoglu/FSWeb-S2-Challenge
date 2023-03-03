@@ -133,7 +133,9 @@ function paragrafOlustur(alinacakDizi, cbCumleKur, cbCumlelereDonustur) {
 
 	const cumleDizisi = cbCumlelereDonustur(alinacakDizi, " ");
 
-	let paragraf = cbCumleKur(cumleDizisi[1], cumleDizisi[3], cumleDizisi[5], cumleDizisi[7], cumleDizisi[9]);
+	let tekSayiAnahtarlar = [1, 3, 5, 7, 9];
+
+	let paragraf = tekSayiAnahtarlar.map(indeks => cbCumleKur(cumleDizisi[indeks])).join("")
 
 	return paragraf;
 
