@@ -109,15 +109,15 @@ console.log(cumleKur(bircumle));
 
 
 function cumlelereDonustur(alinacakDizi, kelimeAyraci, ayrac = ',') {
-	const ucUcaEklenenKelimeler = alinacakDizi.map(cumle => cumle.join(ayrac));
+
 	const cumlelerDizisi = alinacakDizi.map(cumle => cumle.join(kelimeAyraci));
 
-return cumlelerDizisi
+	return cumlelerDizisi
 
-	
+
 }
 
-console.log(cumlelereDonustur(cumleler, " "));
+console.log("Gorev-1__", cumlelereDonustur(cumleler, " "));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
@@ -129,17 +129,27 @@ console.log(cumlelereDonustur(cumleler, " "));
 			6. Oluşturulan paragraf döndürülecek
 	*/
 
-function paragrafOlustur(/* kodlar buraya */) {
-	/* kodlar buraya */
+function paragrafOlustur(alinacakDizi, cbCumleKur, cbCumlelereDonustur) {
+
+	const cumleDizisi = cbCumlelereDonustur(alinacakDizi, " ");
+
+	let paragraf = cbCumleKur(cumleDizisi[1], cumleDizisi[3], cumleDizisi[5], cumleDizisi[7], cumleDizisi[9]);
+
+	return paragraf;
+
 }
 
+
+console.log("Gorev-2__", paragrafOlustur(cumleler, cumleKur, cumlelereDonustur));
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
+
+meyveler.pop();
+meyveler.shift();
 
 
 
@@ -152,7 +162,8 @@ function paragrafOlustur(/* kodlar buraya */) {
 /* kodlar buraya */
 
 
-
+sebzeler.unshift("🐇");
+sebzeler.push("🦔");
 
 
 
@@ -165,7 +176,7 @@ function paragrafOlustur(/* kodlar buraya */) {
 
 var manav;
 
-
+manav = meyveler.concat(sebzeler);
 
 
 
@@ -179,11 +190,18 @@ var manav;
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */) {
-	/* kodlar buraya */
+function emojileriDonustur(mesaj, emojilerNesnesi) {
 
+	for (const emotIkonları in emojilerNesnesi) {
+		mesaj = (mesaj.replaceAll(emotIkonları, emojilerNesnesi[emotIkonları]))
+	}
+	for (const emotIkonları in emojilerNesnesi) {
+		mesaj = (mesaj.replaceAll(emotIkonları.toUpperCase(), emojilerNesnesi[emotIkonları]))
+	}
+	return mesaj
 }
 
+console.log(emojileriDonustur("Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o biraz da üzüldük :( ama yine de seviliyorsun <3", emojiler))
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
