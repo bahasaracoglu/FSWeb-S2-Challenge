@@ -110,7 +110,9 @@ console.log(cumleKur(bircumle));
 
 function cumlelereDonustur(alinacakDizi, kelimeAyraci, ayrac = ',') {
 
-	const cumlelerDizisi = alinacakDizi.map(cumle => cumle.join(kelimeAyraci));
+const cumlelerDizisi = [];
+
+	alinacakDizi.map(cumle => cumlelerDizisi.push(cumle.join(kelimeAyraci)));
 
 	return cumlelerDizisi
 
